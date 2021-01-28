@@ -147,15 +147,19 @@ function fetch_user_all_location(){
 	var user_id = $("#user_id").val();
 	var selected_user_id = $("#selected_user_id").val();
 	var location_data = "";
-	$.ajax({
-		  type: "POST",
-		  url: "fetch_user_all_location",
-		  async: false,
-		  data: {user_id: user_id, selected_user_id: selected_user_id},
-		  dataType: "text",
-		  success: function(resultData){
-			  location_data = JSON.parse(resultData);
-		  }
-	});
+	if(selected_user_id == 'not_found'){
+		alert('User not found');
+	}else{
+		$.ajax({
+			  type: "POST",
+			  url: "fetch_user_all_location",
+			  async: false,
+			  data: {user_id: user_id, selected_user_id: selected_user_id},
+			  dataType: "text",
+			  success: function(resultData){
+				  location_data = JSON.parse(resultData);
+			  }
+		});
+	}
 	return location_data
 }

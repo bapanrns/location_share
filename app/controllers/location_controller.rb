@@ -49,7 +49,7 @@ class LocationController < ApplicationController
 	def show_user_public_share_place
 		if current_user
 			user_details = User.where(("username = '#{params['username']}'")).take
-			@selected_user_id = user_details['id']
+			@selected_user_id = user_details['id'] rescue 'not_found'
 			@user_id = current_user.id
 			render layout: "open_layers"
 		else
