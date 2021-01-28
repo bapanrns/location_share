@@ -30,7 +30,7 @@ when you click anywhere on the map a Bootstrap Modal will open & show
 		
 When you click "Users" menu tab it shows all user list using the application
 It shows user details with share Locatin option
-when you click "Show Public Share Location" of a conciquent user it redirects another page
+when you click "Show Public Share Location" of a consequent user it redirects another page
 it will show all public location of that user
 Example: username= bapan
 url will be: http://127.0.0.1:3000/bapan   
